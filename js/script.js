@@ -134,19 +134,39 @@ function validateForm() {
 }
 
 const data = [{
-        name: "isaac",
-        role: "Admin",
-        actions: ""
+        "name": "Isaac Ogunleye",
+        "role": "Admin",
+        "actions": ""
     },
     {
-        name: "olu",
-        role: "Secetrary",
-        actions: ""
+        "name": "Olumide Awodeji",
+        "role": "Secetrary",
+        "actions": ""
+    },
+    {
+        "name": "Joshua Emmanuel",
+        "role": "Developer",
+        "actions": ""
+    },
+    {
+        "name": "Edmund Giwa",
+        "role": "QA",
+        "actions": ""
+    },
+    {
+        "name": "Joy Ajiboye",
+        "role": "Manager",
+        "actions": ""
+    },
+    {
+        "name": "Martins Mark",
+        "role": "Devloper",
+        "actions": ""
     }
 ]
 
 
-// const div = document.querySelector("#tbody")
+const div = document.querySelector("#tbody")
 
 // const convert = JSON.parse(data);
 

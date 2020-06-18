@@ -61,6 +61,12 @@ a:focus {
     margin-bottom: 50px;
 }
 
+.my-custom-scrollbar {
+    overflow: auto;
+    height: 250px;
+    margin-bottom: 80px;
+}
+
 #cancel-btn {
     margin-right: 20px;
     color: #ffffff !important;

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Blizzers</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary hover-remove">
+                    <i class="fas fa-align-left"></i>
+                    <!-- <span>Toggle Sidebar</span> -->
+                </button>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#">
+                        <i class="fas fa-search"></i> Search
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-chart-area"></i> Chart
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user-friends"></i> People
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <div class="logo">
+                        <img src="./img/company_logo.png" alt="">
+                    </div>
+
+                    <!-- <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button> -->
+                    <div class="user-acc d-flex flex-row">
+                        <div class="user-container">
+                            <h3 class="text-uppercase">Renee Mckelvey</h2>
+                                <h4>Account Settings</h4>
+                        </div>
+                        <div class="user-profile-pic"><i class="far fa-user-circle"></i></div>
+                    </div>
+            </nav>
+
+            <!-- <div class="search-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div> -->
+            <div class="container-fluid">
+                <h2>User list</h2>
+
+                <div class="main">
+                    <div class="form-group has-search">
+                        <span class="fas fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                </div>
+
+                <table class="table table-bordered" id="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" colspan="2">Name</th>
+                            <th scope="col" colspan="2">Role</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- <tr>
+                            <td colspan="2">Mark</td>
+                            <td colspan="2">Otto</td>
+                            <td><i class="fas fa-pencil-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Jacob</td>
+                            <td colspan="2">Thornton</td>
+                            <td><i class="fas fa-pencil-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Larry</td>
+                            <td colspan="2">Thornton</td>
+                            <td><i class="fas fa-pencil-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Jacob</td>
+                            <td colspan="2">Otto</td>
+                            <td><i class="fas fa-pencil-alt"></i></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <!-- 
+                <div class="container-fluid">
+                    <div class="user-details">
+                        <h2 class="user-deet">New User Details</h2>
+                        <h2 class="profile">Profile Picture</h2>
+                    </div>
+                </div> -->
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-8">
+                            <h2 class="user-deet">New User Details</h2>
+                            <hr>
+
+                            <form id="form" class="form-inline">
+                                <div class="d-flex flex-row">
+                                    <div class="col-xs-6 mb-3">
+                                        <input type="name" class="form-control mb-2 mr-sm-5" id="inputUsername" aria-describedby="usernameHelp" placeholder="Username" required>
+                                    </div>
+                                    <div class="col-xs-6 mb-3">
+                                        <input type="email" class="form-control mb-2 mr-sm-5" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" onkeydown="validateEmail()" required>
+                                        <span id="text"></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div class="col-xs-6 mb-3">
+                                        <input type="name" class="form-control mb-2 mr-sm-5" id="inputFirstname" aria-describedby="firstnameHelp" placeholder="First Name" required>
+                                    </div>
+                                    <div class="col-xs-6 mb-3">
+                                        <input type="name" class="form-control mb-2 mr-sm-5" id="inputLastname" aria-describedby="lastnameHelp" placeholder="Last Name" required>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div class="col-xs-6 mb-3">
+                                        <select class="browser-default custom-select form-control mb-2 mr-sm-5" required>
+                                            <option selected="">Role</option>
+                                            <option value="1">Admin</option>
+                                            <option value="2">Developer</option>
+                                            <option value="3">Manager</option>
+                                            <option value="3">QA</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                    <label class="custom-control-label" for="customCheck">Check this custom
+                                        checkbox</label>
+                                </div>
+                        </div>
+                        </form>
+
+                        <div class="col-lg-4">
+                            <h2 class="profile">Profile Picture</h2>
+                            <hr>
+
+                            <!-- <input type="file" name="inputFile" id="inputFile" >
+                            <div class="image-preview" id="imagePreview"></div>
+                            <img src="" alt="" class="image-preview__image">
+                            <span class="image-preview__default-text">Image Preview</span> -->
+
+                            <!-- Image preview -->
+                            <div id="imagePreview"></div>
+
+                            <!-- File input field -->
+                            <input type="file" id="file" onchange="return fileValidation()" />
+
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+
+                <div class="container-fluid flex-row">
+                    <button class="btn btn-primary" onclick="validateForm(), validateEmail()">Add User</button>
+                    <button class="btn btn-primary" id="cancel-btn">Cancel</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/script.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/solid.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/fontawesome.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.2/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
